@@ -4,6 +4,8 @@ import getAnswer from '../src/cli.js';
 console.log('Welcome to the Brain Games!');
 
 const nameQuestion = 'May I have your name?';
-const name = getAnswer(nameQuestion);
+const playerName = getAnswer(nameQuestion);
 
-console.log(`Hello, ${name}!`);
+console.log(`Hello, ${playerName}!`);
+
+export default playerName;
