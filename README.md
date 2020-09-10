@@ -1,5 +1,5 @@
 # Frontend project lvl 1
-It's my first frontend project 'Brain games'
+It's my first frontend project 'Brain Games' (in developing)
 
 <a href="https://codeclimate.com/github/nunsez/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/6a4cf06c6c81656eb9bd/maintainability" /></a>
 
