@@ -1,6 +1,9 @@
 #!/usr/bin/env node
-import greeting from '../src/cli.js';
+import getAnswer from '../src/cli.js';
 
 console.log('Welcome to the Brain Games!');
 
-greeting();
+const nameQuestion = 'May I have your name?';
+const name = getAnswer(nameQuestion);
+
+console.log(`Hello, ${name}!`);
