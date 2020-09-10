@@ -24,7 +24,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: npm clear install
-      run: npm ci
+      run: |
+        make install
 
     - name: run linter via make
-      run: make lint
+      run: |
+        make lint
