@@ -13,9 +13,8 @@ for (let i = 0; i < 3; i += 1) {
   firstNumber[i] = _.random(1, 49);
   secondNumber[i] = _.random(1, 49);
   operationIndex[i] = _.random(0, 2);
-  task[i] = `${firstNumber[i]} ${operations[operationIndex[i]]} ${
-    secondNumber[i]
-  }`;
+  // prettier-ignore
+  task[i] = `${firstNumber[i]} ${operations[operationIndex[i]]} ${secondNumber[i]}`;
 
   switch (operationIndex[i]) {
     case 0:

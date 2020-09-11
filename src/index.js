@@ -15,9 +15,8 @@ const gameEngine = (gameMode, status, i) => {
   const rightAnswer = gameMode.rightAnswer[i].toString();
 
   if (playerAnswer !== rightAnswer) {
-    console.log(
-      `"${playerAnswer}" is wrong answer ;(. Correct answer was "${rightAnswer}".`
-    );
+    // prettier-ignore
+    console.log(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${rightAnswer}".`);
     console.log(`Let's try again, ${playerName}!`);
     return [false, i];
   }
