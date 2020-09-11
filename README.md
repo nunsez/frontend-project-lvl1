@@ -15,3 +15,6 @@ _in developing..._
 ### Definition of an even number
 
 [![asciicast](https://asciinema.org/a/TKxvC6c0AvXZFPuXHdEI9Btrt.svg)](https://asciinema.org/a/TKxvC6c0AvXZFPuXHdEI9Btrt)
+
+### Calculator
+[![asciicast](https://asciinema.org/a/bcpUr0KhFFUipJ8ecr4I8F48V.svg)](https://asciinema.org/a/bcpUr0KhFFUipJ8ecr4I8F48V)
