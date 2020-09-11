@@ -1,4 +1,4 @@
-import getAnswer from './cli.js';
+import getAnswer from '../cli.js';
 
 const greeting = () => {
   console.log('Welcome to the Brain Games!');
