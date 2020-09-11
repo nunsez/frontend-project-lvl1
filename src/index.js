@@ -1,48 +1,33 @@
 import getAnswer from './cli.js';
 import greeting from './games/brain-games.js';
-import * as even from './games/brain-even.js';
-import * as calc from './games/brain-calc.js';
 
 const playerName = greeting();
-let gameMode;
 
-const gameEngine = (incomingGame) => {
-  switch (incomingGame) {
-    case 'calc':
-      gameMode = calc;
-      break;
-    case 'even':
-      gameMode = even;
-      break;
-    default:
-      break;
+const gameEngine = (gameMode, status, i) => {
+  if (i === 0) {
+    console.log(gameMode.prefix);
   }
 
-  console.log(gameMode.prefix); // ! depends on game mode
-  let rightAnswersCount = 0;
+  const currentTask = gameMode.task[i];
+  console.log(`Question: ${currentTask}`);
 
-  do {
-    const i = rightAnswersCount;
-    const currentTask = gameMode.task[i]; // ! depends on game mode
-    console.log(`Question: ${currentTask}`);
+  const playerAnswer = getAnswer(`Your answer:`);
+  const rightAnswer = gameMode.rightAnswer[i].toString();
 
-    const playerAnswer = getAnswer(`Your answer:`);
-    const rightAnswer = gameMode.rightAnswer[i].toString(); // ! depends on game mode
+  if (playerAnswer !== rightAnswer) {
+    console.log(
+      `"${playerAnswer}" is wrong answer ;(. Correct answer was "${rightAnswer}".`
+    );
+    console.log(`Let's try again, ${playerName}!`);
+    return [false, i];
+  }
 
-    if (playerAnswer === rightAnswer) {
-      console.log('Correct!');
-      rightAnswersCount += 1;
-    } else {
-      // prettier-ignore
-      console.log(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${rightAnswer}".`);
-      console.log(`Let's try again, ${playerName}!`);
-      break;
-    }
-  } while (rightAnswersCount < 3);
+  console.log('Correct!');
 
-  if (rightAnswersCount === 3) {
+  if (i === 2) {
     console.log(`Congratulations, ${playerName}!`);
   }
+  return [true, i + 1];
 };
 
 export { gameEngine as default };
