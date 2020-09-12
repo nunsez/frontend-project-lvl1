@@ -1,5 +1,6 @@
 import _ from 'lodash';
 
+const numberOfTries = 3;
 const prefix = 'What is the result of the expression?';
 
 const operations = ['+', '-', '*'];
@@ -30,4 +31,4 @@ for (let i = 0; i < 3; i += 1) {
       break;
   }
 }
-export { prefix, task, rightAnswer };
+export { prefix, task, rightAnswer, numberOfTries };
