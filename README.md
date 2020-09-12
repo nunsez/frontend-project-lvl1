@@ -9,7 +9,7 @@ _in developing..._
 - Calculator. Arithmetic expressions to be evaluated.
 - Progression. Finds missing numbers in a sequence of numbers.
 - Definition of an even number.
-- Determination of the greatest common factor.
+- Determination of the greatest common divisor.
 - Definition of a prime number.
 
 ### Definition of an even number
@@ -18,3 +18,6 @@ _in developing..._
 
 ### Calculator
 [![asciicast](https://asciinema.org/a/bcpUr0KhFFUipJ8ecr4I8F48V.svg)](https://asciinema.org/a/bcpUr0KhFFUipJ8ecr4I8F48V)
+
+### Determination of the greatest common divisor
+[![asciicast](https://asciinema.org/a/MEksY9NsBroHteUXtyqvkmJe6.svg)](https://asciinema.org/a/MEksY9NsBroHteUXtyqvkmJe6)
