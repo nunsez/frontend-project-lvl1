@@ -21,3 +21,6 @@ _in developing..._
 
 ### Determination of the greatest common divisor
 [![asciicast](https://asciinema.org/a/MEksY9NsBroHteUXtyqvkmJe6.svg)](https://asciinema.org/a/MEksY9NsBroHteUXtyqvkmJe6)
+
+### Progression
+[![asciicast](https://asciinema.org/a/qofIL1la1u63OE10CgSolXNo9.svg)](https://asciinema.org/a/qofIL1la1u63OE10CgSolXNo9)
