@@ -10,7 +10,7 @@ const operationIndex = [];
 const task = [];
 const rightAnswer = [];
 
-for (let i = 0; i < 3; i += 1) {
+for (let i = 0; i < numberOfTries; i += 1) {
   firstNumber[i] = _.random(1, 49);
   secondNumber[i] = _.random(1, 49);
   operationIndex[i] = _.random(0, 2);
