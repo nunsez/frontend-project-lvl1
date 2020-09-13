@@ -6,5 +6,5 @@ let inGame = true;
 let i = 0;
 
 while (inGame && i < progression.numberOfTries) {
-  [inGame, i] = gameEngine(progression, true, i);
+  [inGame, i] = gameEngine(progression, i);
 }

@@ -6,5 +6,5 @@ let inGame = true;
 let i = 0;
 
 while (inGame && i < gcd.numberOfTries) {
-  [inGame, i] = gameEngine(gcd, true, i);
+  [inGame, i] = gameEngine(gcd, i);
 }

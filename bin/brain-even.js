@@ -6,5 +6,5 @@ let inGame = true;
 let i = 0;
 
 while (inGame && i < even.numberOfTries) {
-  [inGame, i] = gameEngine(even, true, i);
+  [inGame, i] = gameEngine(even, i);
 }

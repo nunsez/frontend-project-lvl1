@@ -6,5 +6,5 @@ let inGame = true;
 let i = 0;
 
 while (inGame && i < calc.numberOfTries) {
-  [inGame, i] = gameEngine(calc, true, i);
+  [inGame, i] = gameEngine(calc, i);
 }
