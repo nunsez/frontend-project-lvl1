@@ -16,7 +16,7 @@ _in developing..._
 [![asciicast](https://asciinema.org/a/TKxvC6c0AvXZFPuXHdEI9Btrt.svg)](https://asciinema.org/a/TKxvC6c0AvXZFPuXHdEI9Btrt)
 
 ### Calculator
-[![asciicast](https://asciinema.org/a/bcpUr0KhFFUipJ8ecr4I8F48V.svg)](https://asciinema.org/a/bcpUr0KhFFUipJ8ecr4I8F48V)
+[![asciicast](https://asciinema.org/a/PfNkk2FcPboL4wNbrUwZxqlZY.svg)](https://asciinema.org/a/PfNkk2FcPboL4wNbrUwZxqlZY)
 
 ### Determination of the greatest common divisor
 [![asciicast](https://asciinema.org/a/MEksY9NsBroHteUXtyqvkmJe6.svg)](https://asciinema.org/a/MEksY9NsBroHteUXtyqvkmJe6)
