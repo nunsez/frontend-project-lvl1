@@ -6,14 +6,13 @@ _in developing..._
 
 **Brain Games** is a set of five console games, built on the principle of popular mobile brain training apps. Each game asks questions that need to be answered correctly. After three correct answers, the game is considered to be completed. Wrong answers end the game and offer to play it again. Games:
 
-- Calculator. Arithmetic expressions to be evaluated.
-- Progression. Finds missing numbers in a sequence of numbers.
 - Definition of an even number.
+- Calculator. Arithmetic expressions to be evaluated.
 - Determination of the greatest common divisor.
+- Progression. Finds missing numbers in a sequence of numbers.
 - Definition of a prime number.
 
 ### Definition of an even number
-
 [![asciicast](https://asciinema.org/a/TKxvC6c0AvXZFPuXHdEI9Btrt.svg)](https://asciinema.org/a/TKxvC6c0AvXZFPuXHdEI9Btrt)
 
 ### Calculator
@@ -24,3 +23,6 @@ _in developing..._
 
 ### Progression
 [![asciicast](https://asciinema.org/a/qofIL1la1u63OE10CgSolXNo9.svg)](https://asciinema.org/a/qofIL1la1u63OE10CgSolXNo9)
+
+### Definition of a prime number
+[![asciicast](https://asciinema.org/a/0pPZtp5C6SpKPagdvPOULZD96.svg)](https://asciinema.org/a/0pPZtp5C6SpKPagdvPOULZD96)
