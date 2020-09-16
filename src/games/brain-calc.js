@@ -1,34 +1,41 @@
+import { cons } from '@hexlet/pairs';
 import _ from 'lodash';
+import gameEngine, { numberOfTries } from '../index.js';
 
-const numberOfTries = 3;
-const prefix = 'What is the result of the expression?';
+const calculator = (num1, num2, operation) => {
+  switch (operation) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
+    default:
+      return NaN;
+  }
+};
+
+const calcGameStart = () => {};
+
+const rule = 'What is the result of the expression?';
 
 const operations = ['+', '-', '*'];
-const firstNumber = [];
-const secondNumber = [];
-const operationIndex = [];
-const task = [];
-const rightAnswer = [];
+const indexes = []; // operation indexes
+const num1 = [];
+const num2 = [];
+
+const tasks = [];
+const rightAnswers = [];
 
 for (let i = 0; i < numberOfTries; i += 1) {
-  firstNumber[i] = _.random(1, 49);
-  secondNumber[i] = _.random(1, 49);
-  operationIndex[i] = _.random(0, 2);
-  // prettier-ignore
-  task[i] = `${firstNumber[i]} ${operations[operationIndex[i]]} ${secondNumber[i]}`;
-
-  switch (operationIndex[i]) {
-    case 0:
-      rightAnswer[i] = firstNumber[i] + secondNumber[i];
-      break;
-    case 1:
-      rightAnswer[i] = firstNumber[i] - secondNumber[i];
-      break;
-    case 2:
-      rightAnswer[i] = firstNumber[i] * secondNumber[i];
-      break;
-    default:
-      break;
-  }
+  num1[i] = _.random(1, 49);
+  num2[i] = _.random(1, 49);
+  indexes[i] = _.random(0, operations.length - 1);
+  tasks[i] = `${num1[i]} ${operations[indexes[i]]} ${num2[i]}`;
+  rightAnswers[i] = calculator(num1[i], num2[i], operations[indexes[i]]);
 }
-export { prefix, task, rightAnswer, numberOfTries };
+
+const gameData = cons(tasks, rightAnswers);
+gameEngine(rule, gameData);
+
+export default calcGameStart;

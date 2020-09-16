@@ -1,34 +1,38 @@
+import { car, cdr } from '@hexlet/pairs';
 import getAnswer from './cli.js';
-import greeting from './games/brain-games.js';
 
-const playerName = greeting();
+const numberOfTries = 3;
 
-const gameEngine = (gameMode, i) => {
-  // * i = number of try
-  if (i === 0) {
-    console.log(gameMode.prefix);
-  }
+const greeting = () => {
+  console.log('Welcome to the Brain Games!');
+  const playerName = getAnswer('May I have your name?');
+  console.log(`Hello, ${playerName}!`);
 
-  const currentTask = gameMode.task[i];
-  console.log(`Question: ${currentTask}`);
-
-  const playerAnswer = getAnswer(`Your answer:`);
-  const rightAnswer = gameMode.rightAnswer[i].toString();
-
-  if (playerAnswer !== rightAnswer) {
-    // prettier-ignore
-    console.log(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${rightAnswer}".`);
-    console.log(`Let's try again, ${playerName}!`);
-    return [false, i]; // * ingame status = false
-  }
-
-  console.log('Correct!');
-
-  if (i === 2) {
-    console.log(`Congratulations, ${playerName}!`);
-  }
-
-  return [true, i + 1]; // * ingame status = true
+  return playerName;
 };
 
-export { gameEngine as default };
+const gameEngine = (rule, gameData) => {
+  const playerName = greeting();
+  console.log(rule);
+
+  for (let i = 0; i < numberOfTries; i += 1) {
+    const currentTask = car(gameData)[i];
+    console.log(`Question: ${currentTask}`);
+
+    const playerAnswer = getAnswer(`Your answer:`);
+    const rightAnswer = cdr(gameData)[i].toString();
+
+    if (playerAnswer !== rightAnswer) {
+      // prettier-ignore
+      console.log(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${rightAnswer}".`);
+      console.log(`Let's try again, ${playerName}!`);
+      return; // Game over
+    }
+
+    console.log('Correct!');
+  }
+
+  console.log(`Congratulations, ${playerName}!`);
+};
+
+export { gameEngine as default, numberOfTries };

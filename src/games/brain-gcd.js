@@ -1,4 +1,6 @@
+import { cons } from '@hexlet/pairs';
 import _ from 'lodash';
+import gameEngine, { numberOfTries } from '../index.js';
 
 const gcd = (a, b) => {
   if (!b) {
@@ -8,20 +10,26 @@ const gcd = (a, b) => {
   return gcd(b, a % b);
 };
 
-const numberOfTries = 3;
-const prefix = 'Find the greatest common divisor of given numbers.';
+const gcdGameStart = () => {};
 
-const firstNumber = [];
-const secondNumber = [];
-const task = [];
-const rightAnswer = [];
-const gcdProtector = []; // protect the game from multiple '1' answers
+const rule = 'Find the greatest common divisor of given numbers.';
+
+const num1 = [];
+const num2 = [];
+const tasks = [];
+const rightAnswers = [];
+const gcdProtectors = []; // protect the game from multiple '1' answers
 
 for (let i = 0; i < numberOfTries; i += 1) {
-  gcdProtector[i] = _.random(1, 10);
-  firstNumber[i] = gcdProtector[i] * _.random(1, 10);
-  secondNumber[i] = gcdProtector[i] * _.random(1, 10);
-  task[i] = `${firstNumber[i]} ${secondNumber[i]}`;
-  rightAnswer[i] = gcd(firstNumber[i], secondNumber[i]);
+  gcdProtectors[i] = _.random(1, 10);
+  num1[i] = gcdProtectors[i] * _.random(1, 10);
+  num2[i] = gcdProtectors[i] * _.random(1, 10);
+  tasks[i] = `${num1[i]} ${num2[i]}`;
+  rightAnswers[i] = gcd(num1[i], num2[i]);
 }
-export { prefix, task, rightAnswer, numberOfTries };
+
+const gameData = cons(tasks, rightAnswers);
+
+gameEngine(rule, gameData);
+
+export default gcdGameStart;
