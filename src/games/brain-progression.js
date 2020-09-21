@@ -1,44 +1,23 @@
-import { cons } from '@hexlet/pairs';
-import _ from 'lodash';
-import gameEngine, { numberOfTries } from '../index.js';
-
-const makeProgression = (start, step, length) => {
-  const progression = [];
-  for (let i = 0; i < length; i += 1) {
-    progression.push(start + i * step);
-  }
-
-  return progression;
-};
-
-const progressionGameStart = () => {};
+import gameEngine from '../index.js';
+import { makeProgression, rng } from '../tools.js';
 
 const rule = 'What number is missing in the progression?';
+const length = 10; // progression length
 
-const progressionLength = 10;
-const progressionStart = [];
-const progressionStep = [];
-const progression = [];
-const gameElement = [];
+const gameData = () => {
+  const start = rng(0, 10); // progression start element
+  const step = rng(1, 5); // progression step
+  const hiddenElement = rng(0, length - 1);
+  const progression = makeProgression(start, step, length);
 
-const tasks = [];
-const rightAnswers = [];
+  const rightAnswer = progression[hiddenElement];
+  // hide element for task mechanics
+  progression[hiddenElement] = '..';
+  const task = progression.join(' ');
 
-for (let i = 0; i < numberOfTries; i += 1) {
-  progressionStep[i] = _.random(1, 5);
-  progressionStart[i] = _.random(0, 10);
-  gameElement[i] = _.random(0, progressionLength - 1);
+  return [task, rightAnswer.toString()];
+};
 
-  // prettier-ignore
-  progression.push(makeProgression(progressionStart[i], progressionStep[i], progressionLength));
-
-  rightAnswers[i] = progression[i][gameElement[i]];
-  progression[i][gameElement[i]] = '..';
-  tasks[i] = progression[i].join(' ');
-}
-
-const gameData = cons(tasks, rightAnswers);
-
-gameEngine(rule, gameData);
+const progressionGameStart = () => gameEngine(rule, gameData);
 
 export default progressionGameStart;

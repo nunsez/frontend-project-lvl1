@@ -1,35 +1,19 @@
-import { cons } from '@hexlet/pairs';
-import _ from 'lodash';
-import gameEngine, { numberOfTries } from '../index.js';
-
-const gcd = (a, b) => {
-  if (!b) {
-    return a;
-  }
-
-  return gcd(b, a % b);
-};
-
-const gcdGameStart = () => {};
+import gameEngine from '../index.js';
+import { gcd, rng } from '../tools.js';
 
 const rule = 'Find the greatest common divisor of given numbers.';
 
-const num1 = [];
-const num2 = [];
-const tasks = [];
-const rightAnswers = [];
-const gcdProtectors = []; // protect the game from multiple '1' answers
+const gameData = () => {
+  const gcdProtector = rng(1, 10); // protect the game from answer '1'
+  const num1 = gcdProtector * rng(1, 10);
+  const num2 = gcdProtector * rng(1, 10);
 
-for (let i = 0; i < numberOfTries; i += 1) {
-  gcdProtectors[i] = _.random(1, 10);
-  num1[i] = gcdProtectors[i] * _.random(1, 10);
-  num2[i] = gcdProtectors[i] * _.random(1, 10);
-  tasks[i] = `${num1[i]} ${num2[i]}`;
-  rightAnswers[i] = gcd(num1[i], num2[i]);
-}
+  const task = `${num1} ${num2}`;
+  const rightAnswer = gcd(num1, num2);
 
-const gameData = cons(tasks, rightAnswers);
+  return [task, rightAnswer.toString()];
+};
 
-gameEngine(rule, gameData);
+const gcdGameStart = () => gameEngine(rule, gameData);
 
 export default gcdGameStart;

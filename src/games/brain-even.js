@@ -1,23 +1,15 @@
-import { cons } from '@hexlet/pairs';
-import _ from 'lodash';
-import gameEngine, { numberOfTries } from '../index.js';
-
-const isEven = (number) => number % 2 === 0;
-
-const evenGameStart = () => {};
+import gameEngine from '../index.js';
+import { isEven, rng } from '../tools.js';
 
 const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const tasks = [];
-const rightAnswers = [];
+const gameData = () => {
+  const task = rng(1, 99);
+  const rightAnswer = isEven(task) ? 'yes' : 'no';
 
-for (let i = 0; i < numberOfTries; i += 1) {
-  tasks[i] = _.random(1, 99);
-  rightAnswers[i] = isEven(tasks[i]) ? 'yes' : 'no';
-}
+  return [task, rightAnswer];
+};
 
-const gameData = cons(tasks, rightAnswers);
-
-gameEngine(rule, gameData);
+const evenGameStart = () => gameEngine(rule, gameData);
 
 export default evenGameStart;

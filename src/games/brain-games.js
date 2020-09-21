@@ -1,9 +1,9 @@
-import getAnswer from '../cli.js';
+import { getInput, print } from '../tools.js';
 
 const greeting = () => {
-  console.log('Welcome to the Brain Games!');
-  const playerName = getAnswer('May I have your name?');
-  console.log(`Hello, ${playerName}!`);
+  print('Welcome to the Brain Games!');
+  const playerName = getInput('May I have your name?');
+  print(`Hello, ${playerName}!`);
 };
 
 export default greeting;

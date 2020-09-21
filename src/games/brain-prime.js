@@ -1,33 +1,15 @@
-import { cons } from '@hexlet/pairs';
-import _ from 'lodash';
-import gameEngine, { numberOfTries } from '../index.js';
-
-const isPrime = (num) => {
-  const maxValue = Math.sqrt(num);
-
-  for (let i = 2; i <= maxValue; i += 1) {
-    if (num % i === 0) {
-      return false;
-    }
-  }
-
-  return num > 1;
-};
-
-const primeGameStart = () => {};
+import gameEngine from '../index.js';
+import { isPrime, rng } from '../tools.js';
 
 const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const tasks = [];
-const rightAnswers = [];
+const gameData = () => {
+  const task = rng(1, 47);
+  const rightAnswer = isPrime(task) ? 'yes' : 'no';
 
-for (let i = 0; i < numberOfTries; i += 1) {
-  tasks[i] = _.random(1, 47);
-  rightAnswers[i] = isPrime(tasks[i]) ? 'yes' : 'no';
-}
+  return [task, rightAnswer];
+};
 
-const gameData = cons(tasks, rightAnswers);
-
-gameEngine(rule, gameData);
+const primeGameStart = () => gameEngine(rule, gameData);
 
 export default primeGameStart;

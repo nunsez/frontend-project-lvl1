@@ -1,41 +1,23 @@
-import { cons } from '@hexlet/pairs';
-import _ from 'lodash';
-import gameEngine, { numberOfTries } from '../index.js';
-
-const calculator = (num1, num2, operation) => {
-  switch (operation) {
-    case '+':
-      return num1 + num2;
-    case '-':
-      return num1 - num2;
-    case '*':
-      return num1 * num2;
-    default:
-      return NaN;
-  }
-};
-
-const calcGameStart = () => {};
+import gameEngine from '../index.js';
+import { calculate, rng } from '../tools.js';
 
 const rule = 'What is the result of the expression?';
 
+// when the number of operations increases, don't forget to look at the calculate() in '../tools.js'
 const operations = ['+', '-', '*'];
-const indexes = []; // operation indexes
-const num1 = [];
-const num2 = [];
 
-const tasks = [];
-const rightAnswers = [];
+const gameData = () => {
+  const num1 = rng(1, 49);
+  const num2 = rng(1, 49);
+  // define operation index
+  const index = rng(0, operations.length - 1);
 
-for (let i = 0; i < numberOfTries; i += 1) {
-  num1[i] = _.random(1, 49);
-  num2[i] = _.random(1, 49);
-  indexes[i] = _.random(0, operations.length - 1);
-  tasks[i] = `${num1[i]} ${operations[indexes[i]]} ${num2[i]}`;
-  rightAnswers[i] = calculator(num1[i], num2[i], operations[indexes[i]]);
-}
+  const task = `${num1} ${operations[index]} ${num2}`;
+  const rightAnswer = calculate(num1, num2, operations[index]);
 
-const gameData = cons(tasks, rightAnswers);
-gameEngine(rule, gameData);
+  return [task, rightAnswer.toString()];
+};
+
+const calcGameStart = () => gameEngine(rule, gameData);
 
 export default calcGameStart;
