@@ -12,26 +12,29 @@ _in developing..._
 - Progression. Finds missing numbers in a sequence of numbers.
 - Definition of a prime number.
 
-### Package installation and brain-games launch
+## Install
+```sh
+git clone https://github.com/nunsez/frontend-project-lvl1.git
+cd frontend-project-lvl1/
+make install
+```
 
+## Usage examples
+
+### Package installation and brain-games launch
 [![asciicast](https://asciinema.org/a/bqpqNrNizRIInpOJPXxUX4y2P.svg)](https://asciinema.org/a/bqpqNrNizRIInpOJPXxUX4y2P)
 
 ### Definition of an even number
-
 [![asciicast](https://asciinema.org/a/cyY0XNUGdDxhVmDy0ukR5BREW.svg)](https://asciinema.org/a/cyY0XNUGdDxhVmDy0ukR5BREW)
 
 ### Calculator
-
 [![asciicast](https://asciinema.org/a/PfNkk2FcPboL4wNbrUwZxqlZY.svg)](https://asciinema.org/a/PfNkk2FcPboL4wNbrUwZxqlZY)
 
 ### Determination of the greatest common divisor
-
 [![asciicast](https://asciinema.org/a/MEksY9NsBroHteUXtyqvkmJe6.svg)](https://asciinema.org/a/MEksY9NsBroHteUXtyqvkmJe6)
 
 ### Progression
-
 [![asciicast](https://asciinema.org/a/qofIL1la1u63OE10CgSolXNo9.svg)](https://asciinema.org/a/qofIL1la1u63OE10CgSolXNo9)
 
 ### Definition of a prime number
-
 [![asciicast](https://asciinema.org/a/0pPZtp5C6SpKPagdvPOULZD96.svg)](https://asciinema.org/a/0pPZtp5C6SpKPagdvPOULZD96)
