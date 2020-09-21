@@ -47,7 +47,6 @@
     "prettier": "^2.1.1"
   },
   "dependencies": {
-    "@hexlet/pairs": "^1.1.0",
     "lodash": "^4.17.20",
     "readline-sync": "^1.4.10"
   }
