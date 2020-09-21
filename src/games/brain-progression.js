@@ -7,12 +7,12 @@ const length = 10; // progression length
 const gameData = () => {
   const start = rng(0, 10); // progression start element
   const step = rng(1, 5); // progression step
-  const hiddenElement = rng(0, length - 1);
+  const hiddenElementIndex = rng(0, length - 1);
   const progression = makeProgression(start, step, length);
 
-  const rightAnswer = progression[hiddenElement];
+  const rightAnswer = progression[hiddenElementIndex];
   // hide element for task mechanics
-  progression[hiddenElement] = '..';
+  progression[hiddenElementIndex] = '..';
   const task = progression.join(' ');
 
   return [task, rightAnswer.toString()];
