@@ -1,4 +1,4 @@
-import { getInput, print } from '../tools.js';
+import { getInput, print } from '../index.js';
 
 const greeting = () => {
   print('Welcome to the Brain Games!');

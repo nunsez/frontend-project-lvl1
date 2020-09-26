@@ -1,15 +1,18 @@
-import { getInput, print } from './tools.js';
+import readlineSync from 'readline-sync';
+
+export const getInput = (question) => readlineSync.question(`${question} `);
+export const print = (output) => console.log(output);
 
 const numberOfTries = 3;
 
-const gameEngine = (rule, gameData) => {
+const runGameEngine = (rule, getGameData) => {
   print('Welcome to the Brain Games!');
   const playerName = getInput('May I have your name?');
   print(`Hello, ${playerName}!`);
   print(rule);
 
   for (let i = 0; i < numberOfTries; i += 1) {
-    const [task, rightAnswer] = gameData();
+    const [task, rightAnswer] = getGameData();
     print(`Question: ${task}`);
     const playerAnswer = getInput(`Your answer:`);
 
@@ -26,4 +29,4 @@ const gameEngine = (rule, gameData) => {
   print(`Congratulations, ${playerName}!`);
 };
 
-export default gameEngine;
+export default runGameEngine;

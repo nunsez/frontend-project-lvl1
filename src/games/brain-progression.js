@@ -1,13 +1,22 @@
-import gameEngine from '../index.js';
-import { makeProgression, rng } from '../tools.js';
+import _ from 'lodash';
+import runGameEngine from '../index.js';
+
+const makeProgression = (start, step, length) => {
+  const progression = [];
+  for (let i = 0; i < length; i += 1) {
+    progression.push(start + i * step);
+  }
+
+  return progression;
+};
 
 const rule = 'What number is missing in the progression?';
 const length = 10; // progression length
 
-const gameData = () => {
-  const start = rng(0, 10); // progression start element
-  const step = rng(1, 5); // progression step
-  const hiddenElementIndex = rng(0, length - 1);
+const getGameData = () => {
+  const start = _.random(0, 10); // progression start element
+  const step = _.random(1, 5); // progression step
+  const hiddenElementIndex = _.random(0, length - 1);
   const progression = makeProgression(start, step, length);
 
   const rightAnswer = progression[hiddenElementIndex];
@@ -18,6 +27,6 @@ const gameData = () => {
   return [task, rightAnswer.toString()];
 };
 
-const progressionGameStart = () => gameEngine(rule, gameData);
+const progressionGameStart = () => runGameEngine(rule, getGameData);
 
 export default progressionGameStart;

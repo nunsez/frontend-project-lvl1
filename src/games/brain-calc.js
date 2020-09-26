@@ -1,23 +1,37 @@
-import gameEngine from '../index.js';
-import { calculate, rng } from '../tools.js';
+import _ from 'lodash';
+import runGameEngine from '../index.js';
+
+const calculate = (num1, num2, operation) => {
+  switch (operation) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
+    default:
+      return NaN;
+  }
+};
 
 const rule = 'What is the result of the expression?';
 
-// when the number of operations increases, don't forget to look at the calculate() in '../tools.js'
+// when the number of operations increases, don't forget to look at the calculate() above
 const operations = ['+', '-', '*'];
 
-const gameData = () => {
-  const num1 = rng(1, 49);
-  const num2 = rng(1, 49);
-  // define operation index
-  const index = rng(0, operations.length - 1);
+const getGameData = () => {
+  const num1 = _.random(1, 49);
+  const num2 = _.random(1, 49);
+  // define operation
+  const index = _.random(0, operations.length - 1);
+  const operation = operations[index];
 
-  const task = `${num1} ${operations[index]} ${num2}`;
-  const rightAnswer = calculate(num1, num2, operations[index]);
+  const task = `${num1} ${operation} ${num2}`;
+  const rightAnswer = calculate(num1, num2, operation);
 
   return [task, rightAnswer.toString()];
 };
 
-const calcGameStart = () => gameEngine(rule, gameData);
+const calcGameStart = () => runGameEngine(rule, getGameData);
 
 export default calcGameStart;
